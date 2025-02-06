@@ -1,0 +1,42 @@
+Kubernetes - Kubernetes is a Production-Grade Container Orchestration where it manages automated container deployment, scaling, and management.
+
+#Cons of docker
+1. Single Host one (rely on single host)
+2. Don’t have Auto healing 
+3. Don’t have Auto Scaling
+4. Don’t have Enterprise Level Support
+
+- [ ] Docker doesn’t provide Enterprise level standards 
+- [ ] No LB, No Firewall, No Auto Scale, No Heal, No API Gateway
+- [ ] Kubernetes is cluster in nature (Group of Nodes)
+K8’s Architecture -
+￼
+Master node is responsible for managing whole cluster. It monitors the health check of all nodes in the cluster. It stores the members information regarding the different nodes, planning which containers are schedules to which worker nodes, monitoring the containers and nodes, etc. So, when a worker node failed, it moves the workload from failed node to another healthy worker node. Kubernetes master is responsible for scheduling, provisioning, configuring and exposing API’s to the client. So, all these done by a master node using the components called as control plane components. Kubernetes takes care of service discovery, scaling, load balancing, self healing, leader election, etc. therefore, developers no longer have to build these services inside of their application.
+
+Four basic components of the master node(control plane):
+* API server
+* Scheduler
+* Controller manager
+* etcd
+The API server is a centralized component where all the cluster components are communicated. Scheduler, controller manager and other worker node component communicate with the API server. Scheduler and controller manager request information to API server before taking any action. This API server exposes the Kubernetes API. Scheduler is responsible for assigning your application to worker node. It will automatically detect which pod to place on which node based on the resource requirements, hardware constraints and other factors. It will smartly find out the optimum node which ful-fills the requirements to run the application. The Controller Manager maintains the cluster, it handles node failures, replicating components, maintaining the correct number of pods, etc. It constantly tries to keep system in desired state by comparing it with current state of system. Etcd is a data store that stores the cluster configuration. It is recommended that you have a back-up as it is the source of truth for your cluster. And, if anything happened, you can restore all the cluster components from this stored cluster configuration. Etcd is a distributed reliable key-value store where all the configuration is stored in a documents and it’s schema-less.
+
+The Worker node are nothing but a virtual machine(VM’s) running in cloud or on-prem, a physical server running inside your data center. So, any hardware capable of running container runtime can become a worker node. These nodes expose the underlying compute, storage and networking to the applications. They do the heavy-lifting of application running inside the Kubernetes cluster. Together, these nodes form a cluster and run a workload assign to them by master node component as same like manager assign a task to individual team member. This way we could able to achieve fault-tolerance and replication.
+Three basic components of the Worker Node(Data plane)
+* 		Kubelet
+* 		Kube-proxy
+* 		Container runtime 
+The Kubelet runs and manages the containers on node and it talks to API server. The scheduler will update the spec.NodeName with respective worker nodes name and kubelet controller will get a notification from API server and it will then contact the container runtime like Docker for e.g. to go out and pull images that requires to run the pod. The Kube-proxy load balances traffic between application components It is also called as service proxy which run on each node in the Kubernetes cluster. It will constantly look for new services and appropriately create the rules on each node to forward traffic to services to the back-end pods respectively. Container runtime which runs the containers like Docker, rkt or containerd. Once you have the specification that describe your image for your application, the container runtime will pull the images and and run the containers.
+Pods are smallest unit of deployment in Kubernetes as container is smallest unit of deployment in Docker. To understand in easy way, we can compare pods are nothing but lightweight VM in virtualization world. Each pods consist of one or more containers. Pods are ephemeral in nature as they come and go and as the containers are stateless in nature, pods too not maintaining states. Usually we run a single container inside a pod. There are some scenario, we run multiple containers inside a single pod which are dependent on each other. Each time a pod spin up, they get a new ip address with virtual IP range assign by the pod networking solution.
+kubectl is a command line utility though which we can communicate or instruct the Kubernetes cluster to carry out certain task. With this we can control the Kubernetes cluster manager. There are two ways we can instruct the API server to create/update/delete resources in Kubernetes cluster. The imperative way and a declarative way. If you are just getting started then you can begin with imperative way of doing it. But, in production scenario it is best practice to use declarative way. Behind the scene, kubectl translates your imperative command into a declarative Kubernetes Deployment object.
+
+Key Design Principles
+* Scale-in and scale-out workload
+* High Availability
+* Self-healing
+* Portability
+* Security 
+There are other objects in Kubernetes as Deployments, ReplicaSet, Services, DaemonSet, StatefulSet, etc. which we will look in the upcoming dedicated blog series.
+As above Kubernetes components together create an architectural terminology. These core components works seamlessly to provide the best user experience. In this fashion Kubernetes architecture makes it modular and scalable by creating an abstraction between the application and underlying infrastructure.
+
+Kubernetes Deployment
+￼
