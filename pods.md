@@ -8,9 +8,10 @@ A Pod acts like a shell around a container. If you think of a container as an ap
 
 Each Pod has:
 
-One or more containers
-A shared network (same IP address for all containers in the Pod)
-Shared storage (if needed)
+<ul>One or more containers</ul>
+<ul>A shared network (same IP address for all containers in the Pod)</ul>
+<ul>Shared storage (if needed)</ul>
+
 When you deploy an application in Kubernetes, you're usually creating a Pod that contains the container running your app.
 
 <li>Single-Container vs. Multi-Container Pods</li>
