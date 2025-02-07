@@ -6,7 +6,7 @@
 <li>Pod as a Wrapper Around a Container</li>
 A Pod acts like a shell around a container. If you think of a container as an application running inside a virtual box, then a Pod is like an envelope that holds that box, making it easier to manage and communicate with other containers.
 
-Each Pod has:
+<text>Each Pod has:</text>
 
 <ul>One or more containers</ul>
 <ul>A shared network (same IP address for all containers in the Pod)</ul>
