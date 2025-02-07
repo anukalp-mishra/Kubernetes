@@ -3,7 +3,7 @@
 
 <p>Most of the time, a Pod contains a single container—meaning the Pod just runs one application. However, in some cases, multiple containers can run inside the same Pod to work together.</p>
 
-<ul>1. Pod as a Wrapper Around a Container</ul>
+<li>Pod as a Wrapper Around a Container</li>
 A Pod acts like a shell around a container. If you think of a container as an application running inside a virtual box, then a Pod is like an envelope that holds that box, making it easier to manage and communicate with other containers.
 
 Each Pod has:
@@ -13,7 +13,7 @@ A shared network (same IP address for all containers in the Pod)
 Shared storage (if needed)
 When you deploy an application in Kubernetes, you're usually creating a Pod that contains the container running your app.
 
-<li>2. Single-Container vs. Multi-Container Pods</li>
+<li>Single-Container vs. Multi-Container Pods</li>
 While most Pods contain just one container, sometimes multiple containers are placed inside the same Pod for better functionality. There are two common cases for using multiple containers inside a Pod:
 
 a. Sidecar Container
@@ -32,12 +32,12 @@ Ensuring that dependencies are available before the main application starts
 Example:
 
 An Init container might download necessary files from a storage system before starting the main application.
-<li>3. Pod Networking and IP Address Allocation</li>
+<li>Pod Networking and IP Address Allocation</li>
 Every Pod in a Kubernetes cluster is assigned a unique IP address from a pool of available addresses. These IPs are taken from a special range known as podCIDR.
 
 podCIDR: This is a range of IP addresses reserved for Pods in a Kubernetes cluster.
 Each Node in the cluster gets its own portion of this range, and the Pods on that Node receive their IPs from this allocation.
-<li>4. How Does kube-proxy Handle Networking?</li>
+<li>How Does kube-proxy Handle Networking?</li>
 The kube-proxy component in Kubernetes is responsible for managing networking rules. It helps in routing traffic between Pods and services.
 
 Pod IP vs. Cluster IP:
@@ -45,7 +45,7 @@ Pod IP: Assigned to each Pod, allowing it to communicate within the cluster.
 Cluster IP: A virtual IP assigned to a Kubernetes Service so that Pods can communicate with each other through a stable address.
 When a Pod needs to communicate with another Pod or service, kube-proxy ensures the request reaches the correct destination.
 
-<li>5. Shared Networking and Storage in Multi-Container Pods</li>
+<li>Shared Networking and Storage in Multi-Container Pods</li>
 Kubernetes allows shared networking and shared storage for containers inside the same Pod.
 
 Shared Networking: All containers in a Pod share the same network namespace. This means:
@@ -57,7 +57,7 @@ Shared Storage: Containers inside a Pod can share the same storage volume. This 
 
 One container generating logs and another container processing them.
 An Init container downloading files, which the main application then reads.
-<li>6. Localhost Communication Within a Pod</li>
+<li>Localhost Communication Within a Pod</li>
 Since all containers in a Pod share the same network namespace, they can communicate with each other using localhost.
 
 Example:
