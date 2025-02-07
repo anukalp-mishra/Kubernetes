@@ -17,14 +17,14 @@ When you deploy an application in Kubernetes, you're usually creating a Pod that
 <li>Single-Container vs. Multi-Container Pods</li>
 While most Pods contain just one container, sometimes multiple containers are placed inside the same Pod for better functionality. There are two common cases for using multiple containers inside a Pod:
 
-a. Sidecar Container
+<ol>a. Sidecar Container</ol>
 A Sidecar container is an additional container that helps the main container by performing a supporting task. It usually runs alongside the main application and enhances its functionality.
 
 Example:
 
 You have a web server as the main container.
 A sidecar container is responsible for logging the web server’s output and sending it to an external monitoring system.
-b. Init Container
+<ol>b. Init Container</ol>
 An Init container is a special type of container that runs before the main container starts. It is used to perform setup tasks, such as:
 
 Fetching configuration files
