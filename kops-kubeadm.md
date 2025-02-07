@@ -12,6 +12,6 @@ It is used for creating and managing clusters on any compliant infrastructure, i
 kubeadm focuses on the cluster creation process, providing the necessary steps to initialize and configure a Kubernetes control plane and worker nodes.
 It is often used for setting up development, testing, or small production clusters.
 ## Key Differences
-Platform Support: kops is primarily used for cloud-based environments, whereas kubeadm can be used for both cloud and on-premises setups.
-Automation: kops offers more automation features for cluster lifecycle management, while kubeadm focuses on the initial setup and configuration.
-Use Cases: kops is ideal for managing large-scale, production-grade clusters with high availability, while kubeadm is suitable for smaller clusters or environments where manual control is preferred.
+<li>Platform Support: kops is primarily used for cloud-based environments, whereas kubeadm can be used for both cloud and on-premises setups.</li>
+<li>Automation: kops offers more automation features for cluster lifecycle management, while kubeadm focuses on the initial setup and configuration.</li>
+<li>Use Cases: kops is ideal for managing large-scale, production-grade clusters with high availability, while kubeadm is suitable for smaller clusters or environments where manual control is preferred.</li>
