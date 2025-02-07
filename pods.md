@@ -3,7 +3,7 @@
 
 <p>Most of the time, a Pod contains a single container—meaning the Pod just runs one application. However, in some cases, multiple containers can run inside the same Pod to work together.</p>
 
-<li>1. Pod as a Wrapper Around a Container</li>
+<ul>1. Pod as a Wrapper Around a Container</ul>
 A Pod acts like a shell around a container. If you think of a container as an application running inside a virtual box, then a Pod is like an envelope that holds that box, making it easier to manage and communicate with other containers.
 
 Each Pod has:
