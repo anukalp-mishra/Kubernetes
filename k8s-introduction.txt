@@ -35,5 +35,5 @@ Key Design Principles
 * Self-healing
 * Portability
 * Security 
-There are other objects in Kubernetes as Deployments, ReplicaSet, Services, DaemonSet, StatefulSet, etc. which we will look in the upcoming dedicated blog series.
+There are other objects in Kubernetes as Deployments, ReplicaSet, Services, DaemonSet, StatefulSet, etc.
 As above Kubernetes components together create an architectural terminology. These core components works seamlessly to provide the best user experience. In this fashion Kubernetes architecture makes it modular and scalable by creating an abstraction between the application and underlying infrastructure.
