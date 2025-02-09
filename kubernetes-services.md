@@ -1,4 +1,4 @@
-## Why We Need Services in Kubernetes
+## Why We Need Services in Kubernetes..?
 
 When you deploy an application in Kubernetes, it often involves multiple replicas of pods for scalability and reliability. Each pod gets a unique IP address. However, if a pod is deleted or crashes, Kubernetes will replace it with a new pod that has a different IP address. This results in a situation where users cannot reliably access the application using the old IP addresses.
 
