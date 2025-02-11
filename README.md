@@ -21,12 +21,12 @@ Everything about k8s
 <ul>Manages interactions with cloud providers, similar to Terraform.</ul>
 <ul>It abstracts cloud-specific control logic, allowing Kubernetes to interact with the cloud provider’s API to manage resources like virtual machines, load balancers, and storage.</ul>
 ## Data Plane (Worker Node)
-Kubelet
-Basic: Creates and ensures that pods are always running on the node.
-Advanced: It manages the lifecycle of containers, ensuring they are healthy and running as expected, and integrates with container runtimes like Docker or containerd.
-Kube Proxy
-Basic: Provides networking capabilities and default load balancing for services.
-Advanced: It maintains network rules on nodes, allowing network communication to your pods from network sessions inside or outside of your cluster.
-Container Runtime
-Basic: Runs containers inside pods.
-Advanced: It is the software responsible for running the containers, with popular options being Docker, containerd, and CRI-O, ensuring containers are launched, running, and isolated properly.
+<li>Kubelet</li>
+<ol>Creates and ensures that pods are always running on the node.</ol>
+<ol>It manages the lifecycle of containers, ensuring they are healthy and running as expected, and integrates with container runtimes like Docker or containerd.</ol>
+<li>Kube Proxy</li>
+<ol>Provides networking capabilities and default load balancing for services.</ol>
+<ol>It maintains network rules on nodes, allowing network communication to your pods from network sessions inside or outside of your cluster.</ol>
+<li>Container Runtime</li>
+<ol>Runs containers inside pods.</ol>
+<ol>It is the software responsible for running the containers, with popular options being Docker, containerd, and CRI-O, ensuring containers are launched, running, and isolated properly.</ol>
